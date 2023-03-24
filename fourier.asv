@@ -1,0 +1,18 @@
+Va = out.Tensiones_abc.signals(1).values;
+Vb = out.Tensiones_abc.signals(2).values;
+Vc = out.Tensiones_abc.signals(3).values;
+
+Iq = out.Corrientes_qd0.signals(1).values;
+Id = out.Corrientes_qd0.signals(2).values;
+
+t = out.Tensiones_abc.time;
+L = length(t);
+f = Fs*(0:(L/2))/L;
+
+fva = fft(Va);
+
+P2 = abs(fva/L);
+P1 = P2(1:L/2+1);
+P1(2:end-1) = 2*P1(2:end-1);
+
+plot(f, P1)

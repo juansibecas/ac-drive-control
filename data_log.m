@@ -46,7 +46,8 @@ w_m_LTI = out.Pos_Vel_LTI.signals(2).values;
 Iq_LTI = out.Corrientes_qd0_LTI.signals(1).values;
 Id_LTI = out.Corrientes_qd0_LTI.signals(2).values;
 
-
+%Reforzamiento/debilitamiento de campo, comparar contra T_m
+T_m_LTI = out.Tm_LTI.signals(1).values;
 
 
 

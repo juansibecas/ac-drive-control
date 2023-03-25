@@ -1,4 +1,5 @@
 %% Modelo NL
+t = out.tout;
 %Tensiones abc
 Va = out.Tensiones_abc.signals(1).values;
 Vb = out.Tensiones_abc.signals(2).values;

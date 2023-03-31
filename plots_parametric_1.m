@@ -14,7 +14,7 @@ plot(Vq_applied, Vd_applied)
 grid on
 xlabel("Vq(V)")
 ylabel("Vd(V)")
-title("Vq vs Vd aplicada")
+title("Vd vs Vq aplicada")
 saveas(figure(2), strcat(path, 'Vq Vd param.jpg'))
 
 %Iq vs Id
@@ -23,5 +23,5 @@ plot(Iq, Id)
 grid on
 xlabel("Iq(A)")
 ylabel("Id(A)")
-title("Iq vs Id")
+title("Id vs Iq")
 saveas(figure(3), strcat(path, 'Iq Id param.jpg'))

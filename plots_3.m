@@ -19,7 +19,7 @@ grid on
 xlabel("Tiempo(s)")
 ylabel("Error posicion (rad/s)")
 title("theta consigna - theta medido")
-saveas(figure(1), strcat(path, 'Error Posicion.jpg'))
+saveas(figure(2), strcat(path, 'Error Posicion.jpg'))
 
 %error velocidad
 figure(3)
@@ -30,7 +30,7 @@ grid on
 xlabel("Tiempo(s)")
 ylabel("Posicion (rad)-Velocidad (rad/s)")
 title("w consigna - w medido")
-saveas(figure(1), strcat(path, 'Error Velocidad.jpg'))
+saveas(figure(3), strcat(path, 'Error Velocidad.jpg'))
 
 %error de posicion acercamiento
 figure(4)
@@ -43,15 +43,15 @@ grid on
 xlabel("Tiempo(s)")
 ylabel("Error Posicion (rad/s)")
 title("theta consigna - theta medido")
-saveas(figure(1), strcat(path, 'Error Velocidad Posicion.jpg'))
+saveas(figure(4), strcat(path, 'Error Posicion ampliado.jpg'))
 
 %error de velocidad acercamiento
-figure(4)
+figure(5)
 
 plot(t(i_min:i_max),dif_w(i_min:i_max));
 grid on
 xlabel("Tiempo(s)")
 ylabel("Error Velocidad (rad/s)")
 title("w consigna - w medido")
-saveas(figure(1), strcat(path, 'Error Velocidad Posicion.jpg'))
+saveas(figure(5), strcat(path, 'Error Velocidad ampliado.jpg'))
 

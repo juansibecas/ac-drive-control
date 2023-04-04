@@ -8,3 +8,7 @@ w_m = out.PosVel_med.signals(2).values;
 %Posicion y velocidad
 theta_c = out.PosVel_c.signals(1).values;
 w_c = out.PosVel_c.signals(2).values;
+
+%Torques
+T_motor = out.Torques.signals(1).values;
+T_carga = out.Torques.signals(2).values;

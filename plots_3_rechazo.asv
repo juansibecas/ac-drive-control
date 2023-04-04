@@ -1,0 +1,56 @@
+path = 'images/3/rechazo_perturbaciones/';
+
+%error de posicion
+figure(2)
+
+plot(t,theta_c)
+grid on
+xlabel("Tiempo(s)")
+ylabel("Posicion (rad)")
+title("theta medido")
+saveas(figure(2), strcat(path, 'Posicion.jpg'))
+
+%error velocidad
+figure(3)
+
+plot(t,w_c)
+grid on
+xlabel("Tiempo(s)")
+ylabel("Velocidad (rad/s)")
+title("w medido")
+saveas(figure(3), strcat(path, 'Velocidad.jpg'))
+
+%Tor que carga vs torque motor
+figure(9)
+
+plot(t,T_motor,t,T_carga)
+grid on
+xlabel("Tiempo(s)")
+ylabel("Torque (N.m)")
+legend('Torque_motor','Torque_carga')
+title("Torque de motor y de carga")
+saveas(figure(9), strcat(path, 'Torques.jpg'))
+
+%error de posicion acercamiento
+figure(4)
+
+[~, i_min] = min(abs(t - 0.45));
+[~, i_max] = min(abs(t - 0.015));
+
+plot(t(i_min:i_max),dif_theta(i_min:i_max));
+grid on
+xlabel("Tiempo(s)")
+ylabel("Error Posicion (rad/s)")
+title("theta consigna - theta medido")
+saveas(figure(4), strcat(path, 'Error Posicion ampliado.jpg'))
+
+%error de velocidad acercamiento
+figure(5)
+
+plot(t(i_min:i_max),dif_w(i_min:i_max));
+grid on
+xlabel("Tiempo(s)")
+ylabel("Error Velocidad (rad/s)")
+title("w consigna - w medido")
+saveas(figure(5), strcat(path, 'Error Velocidad ampliado.jpg'))
+

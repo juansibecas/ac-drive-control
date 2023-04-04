@@ -1,46 +1,37 @@
-path = 'images/3/rechazo_perturbaciones/';
+path = 'images/3/Observador/';
 
-%error de posicion
+%posicion
 figure(2)
 
-plot(t,theta_m)
+plot(t,Pos_obs,t,Pos_est)
 grid on
 xlabel("Tiempo(s)")
 ylabel("Posicion (rad)")
 title("Posición")
-saveas(figure(2), strcat(path, 'Posicion.jpg'))
+legend('Pocicion','Pocicion estimada')
+saveas(figure(2), strcat(path, 'Posiciones.jpg'))
 
-%error velocidad
+%error de posicion
 figure(3)
 
-plot(t,w_m)
+plot(t,Pos_obs-Pos_est)
 grid on
 xlabel("Tiempo(s)")
-ylabel("Velocidad (rad/s)")
-title("Velocidad")
-saveas(figure(3), strcat(path, 'Velocidad.jpg'))
+ylabel("Error de estimación (rad)")
 
-%Tor que carga vs torque motor
-figure(9)
-
-plot(t,T_motor,t,T_carga)
-grid on
-xlabel("Tiempo(s)")
-ylabel("Torque (N.m)")
-legend('Torque motor','Torque carga')
-title("Torque de motor y de carga")
-saveas(figure(9), strcat(path, 'Torques.jpg'))
+title("Error de estimación")
+saveas(figure(3), strcat(path, 'Error de estimación.jpg'))
 
 %error de posicion acercamiento
 figure(4)
 
-[~, i_min] = min(abs(t - 0.495));
-[~, i_max] = min(abs(t - 0.515));
+[~, i_min] = min(abs(t - 4.7));
+[~, i_max] = min(abs(t - 5.3));
 
-plot(t(i_min:i_max),T_motor(i_min:i_max),t(i_min:i_max),T_carga(i_min:i_max));
+plot(t(i_min:i_max),Pos_obs(i_min:i_max)-Pos_est(i_min:i_max));
 grid on
 xlabel("Tiempo(s)")
-ylabel("Torque (N.m)")
-legend('Torque motor','Torque carga')
-title("Torque de motor y de carga - Acercamiento")
-saveas(figure(4), strcat(path, 'Toques ampliado.jpg'))
+ylabel("Error de estimación (rad)")
+ylim([0 1.2e-4])
+title("Error de estimación - Acercamiento")
+saveas(figure(4), strcat(path, 'Error de estimación ampliado.jpg'))

@@ -27,6 +27,7 @@ Rs_read = out.Subs_Termico.signals(1).values;
 %Posicion y velocidad
 theta_m = out.Pos_Vel.signals(1).values;
 w_m = out.Pos_Vel.signals(2).values;
+w_consigna = out.Pos_Vel.signals(3).values*r;
 
 %Curva T-w
 T_m = out.Curva_Tw.signals(1).values;

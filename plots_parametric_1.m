@@ -10,18 +10,18 @@ saveas(figure(1), strcat(path, 'Curva Tw.jpg'))
 
 %Vq vs Vd
 figure(2)
-plot(Vq_applied, Vd_applied)
+plot(Va, Vb)
 grid on
-xlabel("Vq(V)")
-ylabel("Vd(V)")
-title("Vd vs Vq aplicada")
-saveas(figure(2), strcat(path, 'Vq Vd param.jpg'))
+xlabel("Va(V)")
+ylabel("Vb(V)")
+title("Vb vs Va")
+saveas(figure(2), strcat(path, 'Va Vb param.jpg'))
 
 %Iq vs Id
 figure(3)
-plot(Iq, Id)
+plot(Ia, Ib)
 grid on
-xlabel("Iq(A)")
-ylabel("Id(A)")
-title("Id vs Iq")
-saveas(figure(3), strcat(path, 'Iq Id param.jpg'))
+xlabel("Ia(A)")
+ylabel("Ib(A)")
+title("Ib vs Ia")
+saveas(figure(3), strcat(path, 'Ia Ib param.jpg'))

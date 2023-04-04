@@ -1,4 +1,4 @@
-path = 'images/3/';
+path = 'images/3/rechazo_perturbaciones/';
 %seguimiento de la consigna
 figure(1)
 plot(t, theta_m, t,theta_c, t,w_m, t,w_c)
@@ -35,8 +35,8 @@ saveas(figure(3), strcat(path, 'Error Velocidad.jpg'))
 %error de posicion acercamiento
 figure(4)
 
-[~, i_min] = min(abs(t - 1.95));
-[~, i_max] = min(abs(t - 2.015));
+[~, i_min] = min(abs(t - 7.95));
+[~, i_max] = min(abs(t - 8.015));
 
 plot(t(i_min:i_max),dif_theta(i_min:i_max));
 grid on

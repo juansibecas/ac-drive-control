@@ -1,0 +1,11 @@
+path = 'images/3/';
+
+%temperatura en 600s
+figure(1)
+plot(t, T)
+grid on
+legend("Va", "Vb", "Vc")
+xlabel("Tiempo(s)")
+ylabel("Tensiones abc(V)")
+title("Tensiones abc")
+saveas(figure(1), strcat(path, 'Tensiones abc.jpg'))

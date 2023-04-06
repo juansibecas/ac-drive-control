@@ -1,7 +1,7 @@
 wmax = 6600*2*pi/60; % rpm to rad/s
 
 %
-wpeak2 = 0.7*wmax;
+wpeak2 = 0.8*wmax;
 %
 
 tup1 = 5;
@@ -18,7 +18,7 @@ tup2 = X(2);
 
 fs = 1000;  %sampling f
 tt = 15;    %task time
-tw = 1;     %wait time
+tw = 5;     %wait time
 tf = tt + tw;
 t_sequence = linspace(0, tf, fs*tf);
 

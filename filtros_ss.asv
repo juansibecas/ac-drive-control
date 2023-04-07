@@ -1,0 +1,13 @@
+%%Second order system 
+K = 1;      %Gain
+wn1 = 6000; %rad/s
+e1 = 1;     %damp ratio
+num1 = [K];
+den1 = [1 2*(e1*wn1) wn1^2];
+G1 = tf(num1, den1);
+G1ss = canon(G1, 'companion'); %observable canonical form
+
+G1ConSS_A = G1ss.A.';
+G1ConSS_B = G1ss.C.';
+G1ConSS_C = G1ss.B.';
+G1ConSS_D = G1ss.D;

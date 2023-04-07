@@ -2,7 +2,7 @@
 fs = 1000;  %sampling f
 tt = 15;    %task time
 tr1 = 5;    %rise time
-tw = 1;     %wait time
+tw = 3;     %wait time
 tf = tt + tw;
 t_sequence = linspace(0, tf, fs*tf+1);
 tup1 = 5;

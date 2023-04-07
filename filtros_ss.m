@@ -1,4 +1,4 @@
-%%forma canonica controlable sensores de corriente
+%%forma canonica controlable sensores de corriente y modulador de tensiones
 K = 1;      %Gain
 wn1 = 6000; %rad/s
 e1 = 1;     %damp ratio

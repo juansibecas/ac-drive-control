@@ -1,4 +1,4 @@
-path = 'images/3/Observador/';
+path = 'images/3/ObservadorMejorado/';
 
 %posicion
 figure(2)

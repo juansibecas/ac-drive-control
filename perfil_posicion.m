@@ -1,5 +1,5 @@
 %POSICION TRAPEZOIDAL
-fs = 1000;  %sampling f
+fs = 100000;  %sampling f
 tt = 15;    %task time
 tr1 = 5;    %rise time
 tw = 3;     %wait time
@@ -42,29 +42,28 @@ vw = zeros(1, tw*fs); %wait time at start
 %w RAMP
 w_ramp = zeros(1, round(tr2*fs));
 
-for i=1:tr2*fs
+for i=1:round(tr2*fs)
    w_ramp(i) = wpeak2/tr2 * i/fs;
+   if w_ramp(i) > wpeak2
+       w_ramp(i) = wpeak2;
+   end
 end
 
 %w TRAPEZOID
-w_trapz = zeros(1, tup1*fs);
-w_trapz(1:round(tr2*fs)) = w_ramp;
-for i=1:tup2*fs+1
-   w_trapz(i+round(tr2*fs)) = wpeak2; 
-end
-w_trapz(1, end-length(w_ramp)+1:end) = flip(w_ramp);
+peak_len = tup1*fs - 2*length(w_ramp);
+w_trapz = [w_ramp wpeak2*ones(1, peak_len) flip(w_ramp)];
 
 %w SEQUENCE
 %              wait time        first trapz     speed = 0           second trapz 
-w2 = [zeros(1,tw*fs)    w_trapz         zeros(1, tup1*fs)   w_trapz*-1 0];
+w2 = [zeros(1,tw*fs)    w_trapz         zeros(1, tup1*fs)   -w_trapz 0];
 
 %n = 0.1*fs;   % filter order
 %v_sequence = filter(ones(n, 1)/n, 1, v);
 
 %integrate w to get q
 q2 = zeros(1, tf*fs + 1);
-for i=1:tf*fs+1
-    q2(i) = trapz(w2(1:i))/(fs*r);
+for i=2:tf*fs+1
+    q2(i) = q2(i-1) + trapz(w2(i-1:i))/(fs*r);
 end
 
 %diff w to get acc

@@ -1,8 +1,8 @@
 %%forma canonica controlable sensores de corriente y modulador de tensiones
 K = 1;      %Gain
-wn_c = 8000; %rad/s
+wn_c = 80000; %rad/s
 e1 = 1;     %damp ratio
-num1 = [K];
+num1 = [K*wn_c^2];
 den1 = [1 2*(e1*wn_c) wn_c^2];
 [A1, B1, C1, D1] = tf2ssCCF(num1, den1);
 a1c = -A1(2, 2);
@@ -11,9 +11,9 @@ a2c = -A1(2, 1);
 
 %%forma canonica controlable sensor de posicion
 K = 1;      %Gain
-wn_p = 2000; %rad/s
+wn_p = 100000; %rad/s
 e2 = 1;     %damp ratio
-num2 = [K];
+num2 = [K*wn_p^2];
 den2 = [1 2*(e2*wn_p) wn_p^2];
 [A2, B2, C2, D2] = tf2ssCCF(num2, den2);
 a1p = -A2(2, 2);
@@ -29,8 +29,14 @@ den3 = [T 1];
 a1t = -A3;
 
 %%forma canonica controlable modulador de tension
-a1m = a1c;
-a2m = a2c;
+K = 1;      %Gain
+wn_m = 6000; %rad/s
+e3 = 1;     %damp ratio
+num4 = [K*wn_m^2];
+den4 = [1 2*(e3*wn_m) wn_m^2];
+[A4, B4, C4, D4] = tf2ssCCF(num4, den4);
+a1m = -A4(2, 2);
+a2m = -A4(2, 1);
 sat = sqrt(2/3)*24; %Vsmax = 24V CA rms
 
 function [A, B, C, D] = tf2ssCCF(num, den)

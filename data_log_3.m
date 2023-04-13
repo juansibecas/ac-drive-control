@@ -29,9 +29,9 @@ Rs_read = out.Subs_Termico.signals(1).values;
 theta_m = out.PosVel_med.signals(1).values;
 w_m = out.PosVel_med.signals(2).values;
 
-%Posicion y velocidad
-theta_c = out.PosVel_c.signals(1).values;
-w_c = out.PosVel_c.signals(2).values;
+%Posicion y velocidad - borre el scope
+%theta_c = out.PosVel_c.signals(1).values;
+%w_c = out.PosVel_c.signals(2).values;
 
 %Torques
 T_carga = out.Torques.signals(1).values;

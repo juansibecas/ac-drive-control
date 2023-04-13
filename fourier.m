@@ -1,6 +1,7 @@
-function [] = fourier(x, t) %TODO X SCALING
+function [] = fourier(x, t, tf) %TODO X SCALING
+fs = length(t)/tf;
 L = length(t);
-f = L*(0:(L/2))/L;
+f = fs*(0:(L/2))/L;
 
 fx = fft(x);
 

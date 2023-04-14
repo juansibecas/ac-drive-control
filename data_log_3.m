@@ -6,6 +6,11 @@ Va = out.Tensiones_abc.signals(1).values;
 Vb = out.Tensiones_abc.signals(2).values;
 Vc = out.Tensiones_abc.signals(3).values;
 
+%Tensiones abc moduladas
+Va_m = out.Tensiones_abc_moduladas.signals(1).values;
+Vb_m = out.Tensiones_abc_moduladas.signals(2).values;
+Vc_m = out.Tensiones_abc_moduladas.signals(3).values;
+
 %Corrientes abc
 Ia = out.Corrientes_abc.signals(1).values;
 Ib = out.Corrientes_abc.signals(2).values;

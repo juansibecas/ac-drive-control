@@ -1,8 +1,9 @@
 %%forma canonica controlable sensores de corriente y modulador de tensiones
-
-%%sensor de corriente, wn=80000 es el corte
+n = 1;
+%%sensor de corriente, wn=10000 es el corte
+%%wn=80000 es el corte con inversor
 K = 1;      %Gain
-wn_c = 80000; %rad/s
+wn_c = n*80000; %rad/s
 e1 = 1;     %damp ratio
 num1 = [K*wn_c^2];
 den1 = [1 2*(e1*wn_c) wn_c^2];
@@ -11,9 +12,10 @@ a1c = -A1(2, 2);
 a2c = -A1(2, 1);
 
 
-%%forma canonica controlable sensor de posicion wn=48000 es el corte
+%%forma canonica controlable sensor de posicion wn=15000 es el corte
+%%wn=48000 es el corte con inversor
 K = 1;      %Gain
-wn_p = 48000; %rad/s
+wn_p = n*48000; %rad/s
 e2 = 1;     %damp ratio
 num2 = [K*wn_p^2];
 den2 = [1 2*(e2*wn_p) wn_p^2];

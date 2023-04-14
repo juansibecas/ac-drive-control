@@ -1,6 +1,6 @@
 %%forma canonica controlable sensores de corriente y modulador de tensiones
 
-%%sensor de corriente, wn=80000 es el corte
+%%sensor de corriente
 K = 1;      %Gain
 wn_c = 80000; %rad/s
 e1 = 1;     %damp ratio

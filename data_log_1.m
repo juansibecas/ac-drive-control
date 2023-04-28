@@ -34,7 +34,7 @@ theta_m = out.Pos_Vel.signals(1).values;
 w_m = out.Pos_Vel.signals(2).values;
 
 %Curva T-w
-T_m = out.Curva_Tw.signals(1).values;
+%T_m = out.Curva_Tw.signals(1).values;
 
 %% LTI
 

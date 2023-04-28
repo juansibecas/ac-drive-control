@@ -25,7 +25,7 @@ a1 = [diff(w1)*fs 0];
 wmax = 6600*2*pi/60; % rpm to rad/s
 wpeak1 = 2*pi*r/tup1; %394 rad/s
 %cambiar el % de wmax
-wpeak2 = 0.7*wmax;
+wpeak2 = 0.58*wmax;
 %
 % solve SLE for tr and tup2
 % X = [tr, tup2];

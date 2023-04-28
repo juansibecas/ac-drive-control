@@ -7,7 +7,7 @@ legend("Va", "Vb", "Vc")
 xlabel("Tiempo(s)")
 ylabel("Tensiones abc(V)")
 title("Tensiones abc")
-saveas(figure(1), strcat(path, 'Tensiones abc q2 torque.jpg'))
+saveas(figure(1), strcat(path, 'Tensiones abc q2.jpg'))
 
 %Corrientes abc en t
 figure(2)
@@ -17,7 +17,7 @@ legend("Ia", "Ib", "Ic")
 xlabel("Tiempo(s)")
 ylabel("Corrientes abc(A)")
 title("Corrientes abc")
-saveas(figure(2), strcat(path, 'Corrientes abc q2 torque.jpg'))
+saveas(figure(2), strcat(path, 'Corrientes abc q2.jpg'))
 
 %Curva T-w
 figure(3)
@@ -26,7 +26,7 @@ grid on
 xlabel("Torque electromagnético(N*m)")
 ylabel("Velocidad angular(rad/s)")
 title("Curva T-w")
-saveas(figure(3), strcat(path, 'Curva Tw q2 torque.jpg'))
+saveas(figure(3), strcat(path, 'Curva Tw q2.jpg'))
 
 
 

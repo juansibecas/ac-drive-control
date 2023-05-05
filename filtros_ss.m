@@ -1,9 +1,9 @@
 %%forma canonica controlable sensores de corriente y modulador de tensiones
 n = 1;
 %%sensor de corriente, wn=10000 es el corte
-%%wn=80000 es el corte con inversor
+%%wn=70000 es el corte con inversor
 K = 1;      %Gain
-wn_c = n*80000; %rad/s
+wn_c = n*70000; %rad/s
 e1 = 1;     %damp ratio
 num1 = [K*wn_c^2];
 den1 = [1 2*(e1*wn_c) wn_c^2];
@@ -42,7 +42,7 @@ den4 = [1 2*(e3*wn_m) wn_m^2];
 [A4, B4, C4, D4] = tf2ssCCF(num4, den4);
 a1m = -A4(2, 2);
 a2m = -A4(2, 1);
-sat = sqrt(2/3)*30; %Vsmax = 24V CA rms %30V en bus de continua
+sat = sqrt(2/3)*24; %Vsmax = 24V CA rms %30V en bus de continua
 
 function [A, B, C, D] = tf2ssCCF(num, den)
     G = tf(num, den);

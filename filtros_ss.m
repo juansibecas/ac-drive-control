@@ -2,9 +2,9 @@
 n = 1;
 %%sensor de corriente, wn=10000 es el corte
 %%wn=70000 es el corte con inversor
-K = 1;      %Gain
+K = 1;          %Gain
 wn_c = n*70000; %rad/s
-e1 = 1;     %damp ratio
+e1 = 1;         %damp ratio
 num1 = [K*wn_c^2];
 den1 = [1 2*(e1*wn_c) wn_c^2];
 [A1, B1, C1, D1] = tf2ssCCF(num1, den1);
